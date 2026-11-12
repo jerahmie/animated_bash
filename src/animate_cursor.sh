@@ -6,9 +6,8 @@ __animations__frames=(
 
 
 animate_function () {
-	
-       	$1 &
-
+	#trap "$1 &" SIGINT
+	$1 &
 	command_pid=$!
 
 	while kill -0 $command_pid 2>/dev/null; do
